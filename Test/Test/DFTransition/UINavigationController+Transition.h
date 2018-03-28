@@ -11,9 +11,6 @@
 #import "DFInteractiveTransition.h"
 
 @interface UINavigationController (Transition)
-/**
- 是否开启转场动画
- */
-//- (void)openTransitionAnimation:(BOOL)state;
+
 
 @end
