@@ -21,7 +21,16 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[DFBaseNavController alloc] initWithRootViewController:[ViewController new]];
+    
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    DFBaseNavController *nav = [[DFBaseNavController alloc] initWithRootViewController:[ViewController new]];
+    nav.tabBarItem.title = @"cba";
+    nav.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_mine_selected"];
+    nav.tabBarItem.selectedImage = [UIImage imageNamed:@"icon_tabbar_mine_selected"];
+    tabbar.viewControllers = @[nav];
+    
+    
+    self.window.rootViewController = tabbar;
     
     return YES;
 }

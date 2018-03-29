@@ -12,6 +12,8 @@
 typedef NS_ENUM(NSInteger, DFTransitionType) {
     DFTransitionPush,
     DFTransitionPop,
+    DFTransitionPresent,
+    DFTransitionDismiss
 };
 
 

@@ -86,7 +86,8 @@
         default:
             break;
     }
-    
+    NSLog(@"---%f",_percent);
+
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:{
             _interacting = YES;
@@ -111,7 +112,11 @@
 
 - (void)beganGesture {
 
-    [self.vc.navigationController popViewControllerAnimated:YES];
+    if (self.type == DFTransitionPop) {
+        [self.vc.navigationController popViewControllerAnimated:YES];
+    }else if (self.type == DFTransitionDismiss) {
+        [self.vc dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)continueAction {

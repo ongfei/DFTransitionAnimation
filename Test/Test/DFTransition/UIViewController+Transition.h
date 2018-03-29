@@ -11,4 +11,6 @@
 
 @interface UIViewController (Transition)<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
 
+- (void)df_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion;
+
 @end

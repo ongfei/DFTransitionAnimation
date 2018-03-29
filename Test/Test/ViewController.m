@@ -10,10 +10,14 @@
 #import "NextViewController.h"
 #import "DFTransitionProtocol.h"
 #import "DFTransitionAnimation.h"
-#import "UINavigationController+Transition.h"
 
-@interface ViewController ()
-//<DFTransitionProtocol>
+#import "FViewController.h"
+#import "PresentAnimation.h"
+#import "UIViewController+Transition.h"
+#import "PresentationController.h"
+
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DFTransitionProtocol>
+
 
 @end
 
@@ -23,9 +27,46 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click)];
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click)];
+//    [self.view addGestureRecognizer:tap];
     
+    UITableView *tableV = [[UITableView alloc] initWithFrame:self.view.frame style:(UITableViewStylePlain)];
+    [self.view addSubview:tableV];
+    tableV.delegate = self;
+    tableV.dataSource = self;
+    [tableV registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = @[@"push&pop",@"present"][indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [self click];
+    }else {
+        
+        [self df_presentViewController:[FViewController new] animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)click {
@@ -35,11 +76,17 @@
     [self.navigationController pushViewController:next animated:YES];
 }
 
-//- (DFBaseTransitionAnimation *)pushTransitionAnimation {
-////    return nil;
-//    DFTransitionAnimation *transition = [[DFTransitionAnimation alloc] init];
-//    return transition;
-//}
+- (DFBaseTransitionAnimation *)presentTransitionAnimation {
+//    return nil;
+    PresentAnimation *transition = [[PresentAnimation alloc] init];
+    return transition;
+}
+
+- (Class)presentationControllerForPresentedViewController {
+    
+    return [PresentationController class];
+}
+
 //
 //
 //- (DFTransitionGestureDirection)gestureDirection {
