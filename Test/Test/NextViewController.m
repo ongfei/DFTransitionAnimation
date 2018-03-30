@@ -24,6 +24,10 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor purpleColor];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+    v.backgroundColor = [UIColor redColor];
+    [self.view addSubview:v];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click)];
     [self.view addGestureRecognizer:tap];

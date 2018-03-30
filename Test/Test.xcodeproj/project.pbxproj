@@ -158,6 +158,7 @@
 		65614C622060B59F00B2E789 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				65AE2BED206CDE8600CF6D9D /* Animation */,
 				651A026520623F6700BEDC2C /* DFTransition */,
 				65614C632060B59F00B2E789 /* AppDelegate.h */,
 				65614C642060B59F00B2E789 /* AppDelegate.m */,
@@ -169,14 +170,8 @@
 				651A025D20622EA100BEDC2C /* ThirdViewController.m */,
 				658FB4A0206B7179006370B3 /* FViewController.h */,
 				658FB4A1206B7179006370B3 /* FViewController.m */,
-				65614C9B2060B7BB00B2E789 /* DFTransitionAnimation.h */,
-				65614C9C2060B7BB00B2E789 /* DFTransitionAnimation.m */,
-				651A02502061F79F00BEDC2C /* Animation.h */,
-				651A02512061F79F00BEDC2C /* Animation.m */,
 				65AE2BE6206CC4A000CF6D9D /* PresentationController.h */,
 				65AE2BE7206CC4A000CF6D9D /* PresentationController.m */,
-				658FB4A3206B9DD3006370B3 /* PresentAnimation.h */,
-				658FB4A4206B9DD3006370B3 /* PresentAnimation.m */,
 				65614C9E2060B8F000B2E789 /* DFBaseNavController.h */,
 				65614C9F2060B8F000B2E789 /* DFBaseNavController.m */,
 				65AE2BE9206CC8B200CF6D9D /* icon_tabbar_mine_selected.png */,
@@ -206,6 +201,19 @@
 				65614C892060B59F00B2E789 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		65AE2BED206CDE8600CF6D9D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				65614C9B2060B7BB00B2E789 /* DFTransitionAnimation.h */,
+				65614C9C2060B7BB00B2E789 /* DFTransitionAnimation.m */,
+				651A02502061F79F00BEDC2C /* Animation.h */,
+				651A02512061F79F00BEDC2C /* Animation.m */,
+				658FB4A3206B9DD3006370B3 /* PresentAnimation.h */,
+				658FB4A4206B9DD3006370B3 /* PresentAnimation.m */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
