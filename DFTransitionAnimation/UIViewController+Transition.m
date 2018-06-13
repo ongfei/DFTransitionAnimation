@@ -10,7 +10,6 @@
 #import "DFInteractiveTransition.h"
 #import "DFTransitionProtocol.h"
 #import <objc/runtime.h>
-#import "PresentationController.h"
 
 @implementation UIViewController (Transition)
 
