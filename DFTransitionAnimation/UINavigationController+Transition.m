@@ -23,7 +23,11 @@
 }
 
 - (void)df_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    self.delegate = (id<UINavigationControllerDelegate>)viewController;
+    if ([viewController conformsToProtocol:@protocol(DFTransitionProtocol)]) {
+        self.delegate = (id<UINavigationControllerDelegate>)viewController;
+    }else {
+        self.delegate = nil;
+    }
     [self df_pushViewController:viewController animated:animated];
 }
 

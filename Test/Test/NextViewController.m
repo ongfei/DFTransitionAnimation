@@ -49,11 +49,11 @@
     return transition;
 }
 //
-//- (DFBaseTransitionAnimation *)popTransitionAnimation {
-//    //    return nil;
-//    Animation *transition = [[Animation alloc] init];
-//    return transition;
-//}
+- (DFBaseTransitionAnimation *)popTransitionAnimation {
+    //    return nil;
+    Animation *transition = [[Animation alloc] init];
+    return transition;
+}
 
 - (DFTransitionGestureType)gesturesSupport {
     

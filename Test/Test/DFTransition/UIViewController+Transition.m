@@ -28,7 +28,18 @@
 
 - (void)df_viewDidAppear:(BOOL)animated {
     //pop的情况 重新设置代理
-    self.navigationController.delegate = self;
+//    self.navigationController.delegate = self;
+    if ([self conformsToProtocol:@protocol(DFTransitionProtocol)]) {
+        self.navigationController.delegate = self;
+    }else {
+        self.navigationController.delegate = nil;
+    }
+    __weak typeof (self)weakSelf = self;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
+    }
+    
+    NSLog(@"%@",self.navigationController.delegate);
 //    self.transitioningDelegate = self;
 //    self.modalPresentationStyle = UIModalPresentationCustom;
     [self df_viewDidAppear:animated];
@@ -56,7 +67,7 @@
         if ([fromVC conformsToProtocol:@protocol(DFTransitionProtocol)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-            UIViewController<DFTransitionProtocol> *fromvc = fromVC;
+            UIViewController<DFTransitionProtocol> *fromvc = toVC;
 #pragma clang diagnostic pop
             if ([fromvc respondsToSelector:@selector(pushTransitionAnimation)]) {
                 transition = [fromvc pushTransitionAnimation];
@@ -140,7 +151,7 @@
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     
-    NSLog(@"111111111---%@---%@----%@",self,presented,presenting);
+//    NSLog(@"111111111---%@---%@----%@",self,presented,presenting);
     DFBaseTransitionAnimation *transition = nil;
     if ([source conformsToProtocol:@protocol(DFTransitionProtocol)]) {
         if ([[self transitionVC:source] respondsToSelector:@selector(presentTransitionAnimation)]) {
@@ -175,7 +186,7 @@
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     
-    NSLog(@"22222---%@---%@-",self,dismissed);
+//    NSLog(@"22222---%@---%@-",self,dismissed);
     
     DFBaseTransitionAnimation *transition = nil;
     if ([dismissed conformsToProtocol:@protocol(DFTransitionProtocol)]) {
@@ -189,7 +200,7 @@
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     
-    NSLog(@"===");
+//    NSLog(@"===");
     UIPresentationController *presentationC = nil;
     if ([source conformsToProtocol:@protocol(DFTransitionProtocol)]) {
         if ([[self transitionVC:source] respondsToSelector:@selector(presentationControllerForPresentedViewController)]) {
@@ -200,12 +211,12 @@
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
-    NSLog(@"3333");
+//    NSLog(@"3333");
     return nil;
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
-    NSLog(@"4444");
+//    NSLog(@"4444");
     if (((DFBaseTransitionAnimation *)animator).transitionType == DFTransitionDismiss) {
         if (self.interactiveTransition.interacting) {
             return self.interactiveTransition;

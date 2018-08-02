@@ -26,7 +26,7 @@
     [self.view addGestureRecognizer:tap];
     //    [self.navigationController openTransitionAnimation:YES];
     
-    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
+//    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
     
     self.v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
     self.v.backgroundColor = [UIColor purpleColor];

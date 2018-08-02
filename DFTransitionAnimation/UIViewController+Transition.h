@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DFInteractiveTransition.h"
 
-@interface UIViewController (Transition)<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
+@interface UIViewController (Transition)<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate,UIGestureRecognizerDelegate>
 
 - (void)df_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion;
 

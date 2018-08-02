@@ -16,10 +16,10 @@
 }
 //转场动画处理
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    NSLog(@"111111111100000000");
+//    NSLog(@"111111111100000000");
 
     if (self.transitionType == DFTransitionPresent) {
-        NSLog(@"222222220000000");
+//        NSLog(@"222222220000000");
 
         UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         UINavigationController *fromVC = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -50,7 +50,7 @@
         [maskLayerAnimation setValue:transitionContext forKey:@"transitionContext"];
         [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
         
-        NSLog(@"0000000000000000000");
+//        NSLog(@"0000000000000000000");
         
     }else {
         
@@ -84,7 +84,7 @@
     [transitionContext completeTransition:YES];
             //            [transitionContext viewControllerForKey:UITransitionContextToViewKey].view.layer.mask = nil;
     
-    NSLog(@"++_+_+_+_+_+_+_+_+");
+//    NSLog(@"++_+_+_+_+_+_+_+_+");
 }
 
 @end

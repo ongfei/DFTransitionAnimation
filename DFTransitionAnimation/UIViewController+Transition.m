@@ -24,7 +24,15 @@
 
 - (void)df_viewDidAppear:(BOOL)animated {
 
-    self.navigationController.delegate = self;
+    if ([self conformsToProtocol:@protocol(DFTransitionProtocol)]) {
+        self.navigationController.delegate = self;
+    }else {
+        self.navigationController.delegate = nil;
+    }
+    __weak typeof (self)weakSelf = self;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
+    }
     [self df_viewDidAppear:animated];
 }
 
@@ -48,7 +56,7 @@
         if ([fromVC conformsToProtocol:@protocol(DFTransitionProtocol)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-            UIViewController<DFTransitionProtocol> *fromvc = fromVC;
+            UIViewController<DFTransitionProtocol> *fromvc = toVC;
 #pragma clang diagnostic pop
             if ([fromvc respondsToSelector:@selector(pushTransitionAnimation)]) {
                 transition = [fromvc pushTransitionAnimation];

@@ -86,7 +86,7 @@
         default:
             break;
     }
-    NSLog(@"---%f",_percent);
+//    NSLog(@"---%f",_percent);
 
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:{
