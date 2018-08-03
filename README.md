@@ -13,8 +13,7 @@ Nav的push&pop直接用系统的push pop
 
 自定义动画要继承自 DFBaseTransitionAnimation
 
-如果不实现 那么返回的是DFBaseTransitionAnimation 这个里面的默认动画
-手势的话也是默认手势 详情看协议
+如果不实现 用的是系统的
 
 
 A ---push---> B
