@@ -10,9 +10,9 @@
 #import "DFTransitionProtocol.h"
 #import "Animation.h"
 #import "UINavigationController+Transition.h"
-#import "ananan.h"
 
-@interface ThirdViewController () <DFTransitionProtocol>
+@interface ThirdViewController ()
+//<DFTransitionProtocol>
 
 @end
 
@@ -36,17 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (DFBaseTransitionAnimation *)dismissTransitionAnimation {
-    return [ananan new];
-}
-- (DFTransitionGestureType)gesturesSupport {
-    
-    return DFTransitionGestureFull;
-}
-
-- (DFTransitionGestureDirection)gestureDirection {
-    return DFTransitionGestureDirectionDown;
-}
 /*
 #pragma mark - Navigation
 

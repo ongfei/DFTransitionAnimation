@@ -12,9 +12,6 @@
 #import "ThirdViewController.h"
 #import "DFTransitionAnimation.h"
 
-#import "UIViewController+Transition.h"
-#import "ananan.h"
-
 #import "UINavigationController+Transition.h"
 
 @interface NextViewController ()<DFTransitionProtocol>
@@ -40,19 +37,9 @@
 
 - (void)click {
     
-//    ThirdViewController *next = [ThirdViewController new];
-//
-//    [self.navigationController pushViewController:next animated:YES];
-    [self df_presentViewController:[ThirdViewController new] animated:YES completion:^{
-        
-    }];
-}
-
-- (DFBaseTransitionAnimation *)presentTransitionAnimation {
-    return [ananan new];
-}
-- (DFBaseTransitionAnimation *)dismissTransitionAnimation {
-     return [ananan new];
+    ThirdViewController *next = [ThirdViewController new];
+    
+    [self.navigationController pushViewController:next animated:YES];
 }
 
 - (DFBaseTransitionAnimation *)pushTransitionAnimation {
