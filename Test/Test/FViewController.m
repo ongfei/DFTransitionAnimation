@@ -9,6 +9,7 @@
 #import "FViewController.h"
 #import "DFTransitionProtocol.h"
 #import "PresentAnimation.h"
+#import "ananan.h"
 
 @interface FViewController ()<DFTransitionProtocol>
 
@@ -79,9 +80,11 @@
 
 - (DFBaseTransitionAnimation *)dismissTransitionAnimation {
     //    return nil;
-    PresentAnimation *transition = [[PresentAnimation alloc] init];
+    ananan *transition = [[ananan alloc] init];
     return transition;
 }
+
+
 
 - (DFTransitionGestureType)gesturesSupport {
     

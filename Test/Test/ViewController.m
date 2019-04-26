@@ -15,6 +15,8 @@
 #import "PresentAnimation.h"
 #import "UIViewController+Transition.h"
 #import "PresentationController.h"
+#import "Animation.h"
+#import "ananan.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DFTransitionProtocol>
 
@@ -74,6 +76,12 @@
     NextViewController *next = [NextViewController new];
     
     [self.navigationController pushViewController:next animated:YES];
+}
+
+- (DFBaseTransitionAnimation *)popTransitionAnimation {
+    //    return nil;
+    Animation *transition = [[Animation alloc] init];
+    return transition;
 }
 
 - (DFBaseTransitionAnimation *)presentTransitionAnimation {

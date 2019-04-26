@@ -217,7 +217,7 @@
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
 //    NSLog(@"4444");
-    if ([animator.superclass isKindOfClass:[UIResponder class]] && ((DFBaseTransitionAnimation *)animator).transitionType == DFTransitionDismiss) {
+    if (((DFBaseTransitionAnimation *)animator).transitionType == DFTransitionDismiss) {
         if (self.interactiveTransition.interacting) {
             return self.interactiveTransition;
         }

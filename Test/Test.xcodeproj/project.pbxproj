@@ -28,6 +28,7 @@
 		65AE2BE8206CC4A000CF6D9D /* PresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AE2BE7206CC4A000CF6D9D /* PresentationController.m */; };
 		65AE2BEB206CC8B200CF6D9D /* icon_tabbar_mine_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 65AE2BE9206CC8B200CF6D9D /* icon_tabbar_mine_selected.png */; };
 		65AE2BEC206CC8B200CF6D9D /* icon_tabbar_mine_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65AE2BEA206CC8B200CF6D9D /* icon_tabbar_mine_selected@2x.png */; };
+		65DB59792272EB4200160F50 /* ananan.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB59782272EB4200160F50 /* ananan.m */; };
 		65FFEA442061091C00FF762F /* DFBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FFEA432061091C00FF762F /* DFBaseTransitionAnimation.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		65AE2BE7206CC4A000CF6D9D /* PresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationController.m; sourceTree = "<group>"; };
 		65AE2BE9206CC8B200CF6D9D /* icon_tabbar_mine_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tabbar_mine_selected.png; sourceTree = "<group>"; };
 		65AE2BEA206CC8B200CF6D9D /* icon_tabbar_mine_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_mine_selected@2x.png"; sourceTree = "<group>"; };
+		65DB59772272EB4200160F50 /* ananan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ananan.h; sourceTree = "<group>"; };
+		65DB59782272EB4200160F50 /* ananan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ananan.m; sourceTree = "<group>"; };
 		65FFEA422061091C00FF762F /* DFBaseTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFBaseTransitionAnimation.h; sourceTree = "<group>"; };
 		65FFEA432061091C00FF762F /* DFBaseTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFBaseTransitionAnimation.m; sourceTree = "<group>"; };
 		65FFEA4520610BD100FF762F /* DFTransitionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFTransitionProtocol.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				65614C9C2060B7BB00B2E789 /* DFTransitionAnimation.m */,
 				651A02502061F79F00BEDC2C /* Animation.h */,
 				651A02512061F79F00BEDC2C /* Animation.m */,
+				65DB59772272EB4200160F50 /* ananan.h */,
+				65DB59782272EB4200160F50 /* ananan.m */,
 				658FB4A3206B9DD3006370B3 /* PresentAnimation.h */,
 				658FB4A4206B9DD3006370B3 /* PresentAnimation.m */,
 			);
@@ -351,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DB59792272EB4200160F50 /* ananan.m in Sources */,
 				65614C9A2060B6F900B2E789 /* NextViewController.m in Sources */,
 				65614C682060B59F00B2E789 /* ViewController.m in Sources */,
 				658FB4A5206B9DD3006370B3 /* PresentAnimation.m in Sources */,

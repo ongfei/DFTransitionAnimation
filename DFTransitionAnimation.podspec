@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "DFTransitionAnimation"
-s.version      = "0.0.3"
+s.version      = "0.0.4"
 s.summary      = "转场动画的封装集成"
 s.homepage     = "https://github.com/ongfei/DFTransitionAnimation"
 s.license      = 'MIT'

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, assign) CGFloat percent;
-//不要强引用 否则会造成无法释放问题 这个坑
+//不要强引用 否则会造成无法释放问题
 @property (nonatomic, weak) UIViewController *vc;
 @property (nonatomic, strong) UIPanGestureRecognizer *pan;
 
