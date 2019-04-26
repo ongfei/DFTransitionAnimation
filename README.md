@@ -19,5 +19,5 @@ Nav的push&pop直接用系统的push pop
 A ---push---> B
 如果有push动画 在B里实现
 
-A ---pop---> B
+B ---pop---> A
 如果有pop动画 在B里实现
